@@ -1,0 +1,110 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml:2:1-31:12
+	package
+		ADDED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml:3:5-43
+		INJECTED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml
+		INJECTED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml
+		INJECTED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml:2:11-69
+	android:versionCode
+		INJECTED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml
+		INJECTED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml:5:22-64
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml:6:5-81
+	android:name
+		ADDED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml:6:22-78
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml:7:5-80
+	android:name
+		ADDED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml:7:22-77
+application
+ADDED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml:9:5-29:19
+MERGED from [com.wang.avi:library:1.0.2] C:\Users\Pen\.android\build-cache\3209d9a5cfea075137007a0e22a7447bf196ccae\output\AndroidManifest.xml:11:5-12:19
+MERGED from [com.github.limedroid:mvp:unspecified] E:\WorkSpace\github\XDroidMvp\mvp\build\intermediates\bundles\default\AndroidManifest.xml:11:5-15:19
+MERGED from [com.android.support:design:23.3.0] C:\Users\Pen\.android\build-cache\1de32882a75ee41df5e91ef40796963e70779d6d\output\AndroidManifest.xml:22:5-20
+MERGED from [com.github.limedroid:ARecyclerView:v1.1.5] C:\Users\Pen\.android\build-cache\bbf321b62ec29591690e687339d7613d0540edb1\output\AndroidManifest.xml:10:5-14:19
+MERGED from [com.github.limedroid:XStateController:v1.1.1] C:\Users\Pen\.android\build-cache\9138920b64850511c2d07f25a382c64064db40c4\output\AndroidManifest.xml:11:5-15:19
+MERGED from [com.android.support:appcompat-v7:25.0.0] C:\Users\Pen\.android\build-cache\38540cbadfd235a85ba47dce79b8656d1493a305\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:25.0.0] C:\Users\Pen\.android\build-cache\4b1d74f56bfc4995417e7412731c765fc0821451\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:25.0.0] C:\Users\Pen\.android\build-cache\bed46db01896222a1aaa3067e4ab42095b497d52\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:25.0.0] C:\Users\Pen\.android\build-cache\a825ae16235056ea0bf0fc9737b2c30ef4048d1d\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:25.0.0] C:\Users\Pen\.android\build-cache\d4f7846c875af4f2f0cf82c40d84477ea98cd1b4\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:25.0.0] C:\Users\Pen\.android\build-cache\93738a000b3b9bf9ac8fad85db48d24e2eb9af4f\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.0.0] C:\Users\Pen\.android\build-cache\7cd1ccf7f0201aad9089d0241dc275f1262ba821\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:25.0.0] C:\Users\Pen\.android\build-cache\3aae095c8245407df3c738fe5a221d1c123210ec\output\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-compat:25.0.0] C:\Users\Pen\.android\build-cache\89d9442317cacf69f82950c3eb65a5bfdb540b78\output\AndroidManifest.xml:25:5-20
+MERGED from [com.tbruyelle.rxpermissions2:rxpermissions:0.9.3] C:\Users\Pen\.android\build-cache\9845016db00f63f3ed0a4952d919042f1b2da944\output\AndroidManifest.xml:11:5-20
+	android:label
+		ADDED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml:13:9-41
+	android:supportsRtl
+		ADDED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml:14:9-35
+	android:allowBackup
+		ADDED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml:11:9-35
+	android:icon
+		ADDED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml:12:9-47
+	android:theme
+		ADDED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml:15:9-40
+	android:name
+		ADDED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml:10:9-28
+activity#cn.droidlover.xdroidmvp.demo.ui.MainActivity
+ADDED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml:16:9-24:20
+	android:icon
+		ADDED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml:18:13-51
+	android:name
+		ADDED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml:17:13-44
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml:19:13-23:29
+action#android.intent.action.MAIN
+ADDED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml:20:17-69
+	android:name
+		ADDED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml:20:25-66
+category#android.intent.category.LAUNCHER
+ADDED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml:22:17-77
+	android:name
+		ADDED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml:22:27-74
+activity#cn.droidlover.xdroidmvp.demo.ui.AboutActivity
+ADDED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml:27:9-54
+	android:name
+		ADDED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml:27:19-51
+activity#cn.droidlover.xdroidmvp.demo.ui.WebActivity
+ADDED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml:28:9-52
+	android:name
+		ADDED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml:28:19-49
+uses-sdk
+INJECTED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.wang.avi:library:1.0.2] C:\Users\Pen\.android\build-cache\3209d9a5cfea075137007a0e22a7447bf196ccae\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.limedroid:mvp:unspecified] E:\WorkSpace\github\XDroidMvp\mvp\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:design:23.3.0] C:\Users\Pen\.android\build-cache\1de32882a75ee41df5e91ef40796963e70779d6d\output\AndroidManifest.xml:20:5-43
+MERGED from [com.github.limedroid:ARecyclerView:v1.1.5] C:\Users\Pen\.android\build-cache\bbf321b62ec29591690e687339d7613d0540edb1\output\AndroidManifest.xml:6:5-8:41
+MERGED from [com.android.support:recyclerview-v7:23.3.0] C:\Users\Pen\.android\build-cache\58b21d2e2d2575d5ccb7a4075f940f675429a85b\output\AndroidManifest.xml:20:5-43
+MERGED from [com.github.limedroid:XStateController:v1.1.1] C:\Users\Pen\.android\build-cache\9138920b64850511c2d07f25a382c64064db40c4\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.jakewharton:butterknife:8.4.0] C:\Users\Pen\.android\build-cache\f38e9091aa3682932dd53ea4d75448e5a132fb15\output\AndroidManifest.xml:5:5-43
+MERGED from [com.trello.rxlifecycle2:rxlifecycle-components:2.0.1] C:\Users\Pen\.android\build-cache\bbb096882275cd35b1911f6053ec38f2c13451fd\output\AndroidManifest.xml:17:5-44
+MERGED from [com.trello.rxlifecycle2:rxlifecycle-android:2.0.1] C:\Users\Pen\.android\build-cache\db793b45b70f37ed0febf577d5750a36dda1d029\output\AndroidManifest.xml:17:5-44
+MERGED from [io.reactivex.rxjava2:rxandroid:2.0.1] C:\Users\Pen\.android\build-cache\25e50acd9c83657fad0f0dbf60c4cfbfb0f17b78\output\AndroidManifest.xml:19:5-43
+MERGED from [com.android.support:appcompat-v7:25.0.0] C:\Users\Pen\.android\build-cache\38540cbadfd235a85ba47dce79b8656d1493a305\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-v4:25.0.0] C:\Users\Pen\.android\build-cache\4b1d74f56bfc4995417e7412731c765fc0821451\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.0.0] C:\Users\Pen\.android\build-cache\bed46db01896222a1aaa3067e4ab42095b497d52\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.0.0] C:\Users\Pen\.android\build-cache\a825ae16235056ea0bf0fc9737b2c30ef4048d1d\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.0.0] C:\Users\Pen\.android\build-cache\d4f7846c875af4f2f0cf82c40d84477ea98cd1b4\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.0.0] C:\Users\Pen\.android\build-cache\93738a000b3b9bf9ac8fad85db48d24e2eb9af4f\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:animated-vector-drawable:25.0.0] C:\Users\Pen\.android\build-cache\7cd1ccf7f0201aad9089d0241dc275f1262ba821\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.0.0] C:\Users\Pen\.android\build-cache\3aae095c8245407df3c738fe5a221d1c123210ec\output\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-compat:25.0.0] C:\Users\Pen\.android\build-cache\89d9442317cacf69f82950c3eb65a5bfdb540b78\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.tbruyelle.rxpermissions2:rxpermissions:0.9.3] C:\Users\Pen\.android\build-cache\9845016db00f63f3ed0a4952d919042f1b2da944\output\AndroidManifest.xml:7:5-9:41
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:25.0.0] C:\Users\Pen\.android\build-cache\38540cbadfd235a85ba47dce79b8656d1493a305\output\AndroidManifest.xml:23:9-75
+	android:targetSdkVersion
+		INJECTED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml
+		INJECTED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml
+		INJECTED from E:\WorkSpace\github\XDroidMvp\app\src\main\AndroidManifest.xml

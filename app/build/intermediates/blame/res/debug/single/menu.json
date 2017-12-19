@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "E:\\WorkSpace\\github\\XDroidMvp\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_main.xml",
+        "source": "E:\\WorkSpace\\github\\XDroidMvp\\app\\src\\main\\res\\menu\\menu_main.xml"
+    },
+    {
+        "merged": "E:\\WorkSpace\\github\\XDroidMvp\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_web.xml",
+        "source": "E:\\WorkSpace\\github\\XDroidMvp\\app\\src\\main\\res\\menu\\menu_web.xml"
+    }
+]
