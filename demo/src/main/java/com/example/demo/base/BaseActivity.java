@@ -35,7 +35,7 @@ import cn.droidlover.xdroidmvp.widget.StateController;
  * 有默认toolbar、可自定义toolbar、可固定头部
  */
 
-public abstract class BaseActivity<P extends IPresent> extends RxAppCompatActivity implements IView<P> {
+public abstract class BaseActivity<P extends BasePersenter> extends RxAppCompatActivity implements BaseView<P> {
 
     private VDelegate vDelegate;
     private P p;
@@ -257,6 +257,11 @@ public abstract class BaseActivity<P extends IPresent> extends RxAppCompatActivi
      */
     protected int getContainerViewId() {
         return R.id.fl_content;
+    }
+
+    @Override
+    public void showToast() {
+
     }
 
     /**

@@ -245,6 +245,11 @@ public abstract class LoadStateActivity<P extends LoadStatePersenter> extends Rx
         return mContentView;
     }
 
+    @Override
+    public void showToast() {
+
+    }
+
     /**
      * 是否开启沉浸式 默认true
      *

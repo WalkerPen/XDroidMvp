@@ -123,8 +123,13 @@ public abstract class LoadStateFragment<P extends LoadStatePersenter> extends Rx
         mXLlHeader.addView(header);
     }
 
-    protected View getRootView() {
+    protected View getContentView() {
         return rootView;
+    }
+
+    @Override
+    public void showToast() {
+
     }
 
     @Override

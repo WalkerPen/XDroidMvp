@@ -3,12 +3,12 @@ package com.example.demo;
 import android.os.Bundle;
 
 import com.example.demo.base.BaseActivity;
-import com.example.demo.base.LoadStatePersenter;
+import com.example.demo.base.BasePersenter;
 
 public class FragmentActivity extends BaseActivity {
 
     @Override
-    protected LoadStatePersenter newP() {
+    protected BasePersenter newP() {
         return null;
     }
 

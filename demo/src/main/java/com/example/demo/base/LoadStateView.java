@@ -14,4 +14,6 @@ public interface LoadStateView<P> extends IView<P>{
     void showError();
 
     void showEmpty();
+
+    void showToast();
 }

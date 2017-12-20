@@ -118,9 +118,10 @@ public abstract class LoadStateLazyFragment<P extends LoadStatePersenter> extend
         mXLlHeader.addView(header);
     }
 
-    /*protected View getRootView() {
-        return rootView;
-    }*/
+    @Override
+    public void showToast() {
+
+    }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
