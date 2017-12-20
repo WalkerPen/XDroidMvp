@@ -1,14 +1,20 @@
 package com.example.demo;
 
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Gravity;
-import android.widget.TextView;
+import android.support.annotation.Nullable;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
 
-import com.example.demo.base.BasePersenter;
 import com.example.demo.base.LoadStateLazyFragment;
+import com.example.demo.base.LoadStatePersenter;
 
-import cn.droidlover.xdroidmvp.mvp.LazyFragment;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+import butterknife.Unbinder;
+import cn.droidlover.xdroidmvp.imageloader.ILFactory;
 
 /**
  * Created by Pen on 2017/11/21.
@@ -16,34 +22,17 @@ import cn.droidlover.xdroidmvp.mvp.LazyFragment;
 
 public class PageFragment extends LoadStateLazyFragment {
 
-    /*@Override
-    protected void onCreateViewLazy(Bundle savedInstanceState) {
-        final TextView textView = new TextView(getContext());
-        textView.setGravity(Gravity.CENTER);
-        textView.setText(getArguments().getInt("title") + "");
-        textView.setTextSize(22);
-
-        Log.d("测试", "Fragment1 ------ onCreateView");
-        setContentView(textView);
-
-        textView.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                textView.setText("加载完成");
-            }
-        }, 3000);
-    }*/
-
-
+    @BindView(R.id.iv_header)
+    ImageView mIvHeader;
 
     @Override
-    protected BasePersenter newP() {
+    protected LoadStatePersenter newP() {
         return null;
     }
 
     @Override
     protected void initData(Bundle savedInstanceState) {
-        final TextView textView = new TextView(getContext());
+        /*final TextView textView = new TextView(getContext());
         textView.setGravity(Gravity.CENTER);
         textView.setText(getArguments().getInt("title") + "");
         textView.setTextSize(22);
@@ -56,12 +45,14 @@ public class PageFragment extends LoadStateLazyFragment {
             public void run() {
                 textView.setText("加载完成");
             }
-        }, 3000);
+        }, 3000);*/
+        ILFactory.getLoader().loadResource(mIvHeader, R.drawable.biting, null);
+        addHeader(mIvHeader);
     }
 
     @Override
     protected int getLayoutId() {
-        return 0;
+        return R.layout.activity_main;
     }
 
     public static PageFragment newInstance(int position) {
@@ -71,5 +62,10 @@ public class PageFragment extends LoadStateLazyFragment {
         //fragment保存参数，传入一个Bundle对象
         pageFragment.setArguments(bundle);
         return pageFragment;
+    }
+
+    @OnClick(R.id.bt_request)
+    public void onViewClicked() {
+        showLoading();
     }
 }

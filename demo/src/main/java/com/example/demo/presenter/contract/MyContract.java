@@ -1,21 +1,18 @@
 package com.example.demo.presenter.contract;
 
-import com.example.demo.base.BasePersenter;
-import com.example.demo.base.BaseView;
-
-import cn.droidlover.xdroidmvp.mvp.IPresent;
-import cn.droidlover.xdroidmvp.mvp.IView;
+import com.example.demo.base.LoadStatePersenter;
+import com.example.demo.base.LoadStateView;
 
 /**
  * Created by Pen on 2017/11/3.
  */
 
 public interface MyContract {
-    interface View extends BaseView<Presenter> {
+    interface View extends LoadStateView<Presenter> {
 
     }
 
-    interface Presenter extends BasePersenter<View> {
+    interface Presenter extends LoadStatePersenter<View> {
 
     }
 }

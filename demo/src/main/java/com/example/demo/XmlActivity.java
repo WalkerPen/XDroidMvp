@@ -6,19 +6,18 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 
-import com.example.demo.base.BaseActivity;
-import com.example.demo.base.BasePersenter;
+import com.example.demo.base.LoadStateActivity;
+import com.example.demo.base.LoadStatePersenter;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
-public class XmlActivity extends BaseActivity {
+public class XmlActivity extends LoadStateActivity {
 
     @BindView(R.id.viewPager)
     ViewPager mViewPager;
 
     @Override
-    protected BasePersenter newP() {
+    protected LoadStatePersenter newP() {
         return null;
     }
 

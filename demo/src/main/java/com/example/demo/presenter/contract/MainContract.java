@@ -1,7 +1,7 @@
 package com.example.demo.presenter.contract;
 
-import com.example.demo.base.BasePersenter;
-import com.example.demo.base.BaseView;
+import com.example.demo.base.LoadStatePersenter;
+import com.example.demo.base.LoadStateView;
 
 import cn.droidlover.xdroidmvp.mvp.IPresent;
 import cn.droidlover.xdroidmvp.mvp.IView;
@@ -11,12 +11,13 @@ import cn.droidlover.xdroidmvp.mvp.IView;
  */
 
 public interface MainContract {
-    interface View extends BaseView<Presenter> {
+    interface View extends LoadStateView<Presenter> {
 
     }
 
-    interface Presenter extends BasePersenter<View> {
+    interface Presenter extends LoadStatePersenter<View> {
         void login(String phone, String password);
+
         void getProblem(String search, int type);
     }
 }

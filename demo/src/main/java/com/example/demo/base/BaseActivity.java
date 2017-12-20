@@ -23,15 +23,19 @@ import cn.droidlover.xdroidmvp.XDroidConf;
 import cn.droidlover.xdroidmvp.event.BusProvider;
 import cn.droidlover.xdroidmvp.kit.KnifeKit;
 import cn.droidlover.xdroidmvp.kit.MyUtils;
+import cn.droidlover.xdroidmvp.mvp.IPresent;
+import cn.droidlover.xdroidmvp.mvp.IView;
 import cn.droidlover.xdroidmvp.mvp.VDelegate;
 import cn.droidlover.xdroidmvp.mvp.VDelegateBase;
 import cn.droidlover.xdroidmvp.widget.StateController;
 
 /**
  * Created by Pen on 2017/7/28.
+ * 有一个内容容器，无需切换状态、只做容器时可使用
+ * 有默认toolbar、可自定义toolbar、可固定头部
  */
 
-public abstract class BaseActivity<P extends BasePersenter> extends RxAppCompatActivity implements BaseView<P> {
+public abstract class BaseActivity<P extends IPresent> extends RxAppCompatActivity implements IView<P> {
 
     private VDelegate vDelegate;
     private P p;
@@ -40,7 +44,6 @@ public abstract class BaseActivity<P extends BasePersenter> extends RxAppCompatA
     private RxPermissions rxPermissions;
 
     private Unbinder unbinder;
-    private StateController mStateController;
     /**
      * 头部容器
      */
@@ -52,7 +55,9 @@ public abstract class BaseActivity<P extends BasePersenter> extends RxAppCompatA
     /**
      * 默认toolbar
      */
-    private Toolbar mToolbar;
+    private Toolbar mToolbar;//默认的toolbar
+    private View mContentView;//加载的布局文件或者手动添加的content
+    private FrameLayout mFlContent;//contentView的容器
 
 
     @Override
@@ -62,26 +67,17 @@ public abstract class BaseActivity<P extends BasePersenter> extends RxAppCompatA
         context = this;
         initView();
         if (getLayoutId() > 0) {
-            View contentView = View.inflate(this, getLayoutId(), null);
-            mStateController.setContentView(contentView);
-            showContent();
-            bindUI(contentView);
+            mContentView = View.inflate(this, getLayoutId(), null);
+            mFlContent.removeAllViews();
+            mFlContent.addView(mContentView);
+            bindUI(mContentView);
             bindEvent();
         }
         initData(savedInstanceState);
-
-        //根据toolbar的高度设置toolbar容器的高度
-        mXFlToobar.post(new Runnable() {
-            @Override
-            public void run() {
-                mXFlToobar.getLayoutParams().height = mXFlToobar.getChildAt(0).getHeight();
-                mXFlToobar.requestLayout();
-            }
-        });
     }
 
     private void initView() {
-        mStateController = (StateController) findViewById(R.id.state);
+        mFlContent = (FrameLayout) findViewById(R.id.fl_content);
         mXLlHeader = (LinearLayout) findViewById(R.id.x_ll_header);
         mXFlToobar = (FrameLayout) findViewById(R.id.x_fl_toobar);
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -93,8 +89,6 @@ public abstract class BaseActivity<P extends BasePersenter> extends RxAppCompatA
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         }
         setToolbarBackground();
-
-
     }
 
     /**
@@ -113,11 +107,15 @@ public abstract class BaseActivity<P extends BasePersenter> extends RxAppCompatA
 
     /**
      * 设置toolbar，这个view将会从原来的布局中脱离出来，而成为新的toolbar
+     *
      * @param toolbar
      * @param needPadding
      */
     protected void setToolbar(View toolbar, boolean needPadding) {
         mXFlToobar.removeAllViews();
+        if (mToolbar != null) {
+            mToolbar = null;
+        }
         if (toolbar != null) {
             ((ViewGroup) toolbar.getParent()).removeView(toolbar);
             mXFlToobar.addView(toolbar);
@@ -234,33 +232,42 @@ public abstract class BaseActivity<P extends BasePersenter> extends RxAppCompatA
     }
 
     /**
+     * 如果内容很简单，不像定义布局文件，可将View设置为contentView
+     * @param contentView
+     */
+    protected void setContent(View contentView) {
+        if (contentView.getParent() != null) {
+            ((ViewGroup) contentView.getParent()).removeView(contentView);
+        }
+        mContentView = contentView;
+        mFlContent.addView(mContentView);
+    }
+
+    /**
+     * 获取布局或者手动setContent的view
+     * @return
+     */
+    protected View getContentView() {
+        return mContentView;
+    }
+
+    /**
+     * 获取content容器id
+     * @return
+     */
+    protected int getContainerViewId() {
+        return R.id.fl_content;
+    }
+
+    /**
      * 是否开启沉浸式 默认true
+     *
      * @return
      */
     protected boolean immersion() {
         return true;
     }
 
-
-    @Override
-    public void showLoading() {
-        mStateController.showLoading();
-    }
-
-    @Override
-    public void showContent() {
-        mStateController.showContent();
-    }
-
-    @Override
-    public void showError() {
-        mStateController.showError();
-    }
-
-    @Override
-    public void showEmpty() {
-        mStateController.showEmpty();
-    }
 
     protected abstract P newP();
 

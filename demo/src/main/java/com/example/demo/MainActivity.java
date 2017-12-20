@@ -1,50 +1,38 @@
 package com.example.demo;
 
 import android.Manifest;
-import android.app.Activity;
-import android.app.SearchManager;
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
-import android.support.v7.widget.SearchView;
-import android.util.Log;
-import android.view.Menu;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.demo.base.BaseActivity;
+import com.example.demo.base.LoadStateActivity;
 import com.example.demo.bean.LoginResponse;
 import com.example.demo.net.NetService;
 import com.example.demo.presenter.MainPresenter;
 import com.example.demo.presenter.contract.MainContract;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Random;
 
 import cn.droidlover.xdroidmvp.imageloader.ILFactory;
-import cn.droidlover.xdroidmvp.mvp.XActivity;
-import io.reactivex.Observable;
-import io.reactivex.ObservableSource;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Consumer;
-import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 import okhttp3.ResponseBody;
 
-public class MainActivity extends BaseActivity<MainContract.Presenter> implements MainContract.View {
+public class MainActivity extends LoadStateActivity<MainContract.Presenter> implements MainContract.View {
 
     private MyImageView mImage;
+    private ImageView mIvHeader;
 
     public void request(View view) {
-        startActivity(new Intent(this, XmlActivity.class));
+        startActivity(new Intent(this, FragmentActivity.class));
+        overridePendingTransition(0, 0);
     }
 
     public void getProblem(View view) {
@@ -138,14 +126,14 @@ public class MainActivity extends BaseActivity<MainContract.Presenter> implement
         ILFactory.getLoader().init(this);
 
 //        String url = "https://dimg02.c-ctrip.com/images/fd/tg/g1/M05/2A/B7/CghzflVQaLmAWMv0AAEyAoZKHLY067_C_422_236.jpg";
-        ImageView ivHeader = (ImageView) findViewById(R.id.iv_header);
-        ILFactory.getLoader().loadResource(ivHeader, R.drawable.biting, null);
+        mIvHeader = (ImageView) findViewById(R.id.iv_header);
+        ILFactory.getLoader().loadResource(mIvHeader, R.drawable.biting, null);
 //        addHeader(ivHeader);
-        setToolbar(ivHeader, false);
+//        setToolbar(mIvHeader, true);
 //        addHeader(findViewById(R.id.bt_request));
-        getSupportActionBar().setTitle("主页");
+//        getSupportActionBar().setTitle("主页");
 
-        final String[] per = {Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE};
+        /*final String[] per = {Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE};
 
         if (should(per)) {
             Log.d("测试", "拒绝过一次了");
@@ -172,7 +160,7 @@ public class MainActivity extends BaseActivity<MainContract.Presenter> implement
                         }
                     }
                 });
-
+*/
     }
 
     @Override
@@ -192,11 +180,11 @@ public class MainActivity extends BaseActivity<MainContract.Presenter> implement
 
     @Override
     protected boolean immersion() {
-        return false;
+        return true;
     }
 
     private boolean should(String[] permissions) {
-        for(int i = 0; i < permissions.length; i ++) {
+        for (int i = 0; i < permissions.length; i++) {
             if (ActivityCompat.shouldShowRequestPermissionRationale(this, permissions[i])) {
                 return true;
             }

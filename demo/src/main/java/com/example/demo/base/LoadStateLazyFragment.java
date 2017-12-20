@@ -23,9 +23,10 @@ import cn.droidlover.xdroidmvp.widget.StateController;
 
 /**
  * Created by Pen on 2017/12/19.
+ * 带加载状态切换、固定头部的懒加载fragment，如果有多个fragment切换，就用这个
  */
 
-public abstract class LoadStateLazyFragment<P extends BasePersenter> extends LazyFragment implements BaseView<P>{
+public abstract class LoadStateLazyFragment<P extends LoadStatePersenter> extends LazyFragment implements LoadStateView<P> {
     private VDelegate vDelegate;
     private P p;
     private View rootView;
@@ -71,8 +72,6 @@ public abstract class LoadStateLazyFragment<P extends BasePersenter> extends Laz
         mStateController = (StateController) rootView.findViewById(R.id.state);
         mXLlHeader = (LinearLayout) rootView.findViewById(R.id.x_ll_header);
         mXFlToobar = (FrameLayout) rootView.findViewById(R.id.x_fl_toobar);
-
-//        setToolbarBackground();
     }
 
     /**
@@ -186,9 +185,25 @@ public abstract class LoadStateLazyFragment<P extends BasePersenter> extends Laz
 
     }
 
+    /**
+     * 手动设置将一个view设置为contentView
+     * @param contentView
+     */
     protected void setContent(View contentView) {
-        mStateController.setContentView(contentView);
+        if (contentView.getParent() != null) {
+            ((ViewGroup) contentView.getParent()).removeView(contentView);
+        }
+        rootView = contentView;
+        mStateController.setContentView(rootView);
         showContent();
+    }
+
+    /**
+     * 获取布局或者手动setContent的view
+     * @return
+     */
+    protected View getContentView() {
+        return rootView;
     }
 
     @Override

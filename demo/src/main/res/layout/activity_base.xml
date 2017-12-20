@@ -22,22 +22,17 @@
                 android:layout_height="wrap_content"
                 android:clipToPadding="false"
                 android:fitsSystemWindows="true"
+                android:background="@color/colorPrimary"
                 app:theme="@style/ToolbarColor"
                 app:titleTextAppearance="@style/ToolbarSize"
-                android:background="@drawable/bg"
                 app:navigationIcon="@drawable/back">
             </android.support.v7.widget.Toolbar>
         </FrameLayout>
     </LinearLayout>
 
-    <cn.droidlover.xdroidmvp.widget.StateController
-        android:id="@+id/state"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:x_emptyLayoutId="@layout/state_empty"
-        app:x_errorLayoutId="@layout/state_error"
-        app:x_loadingLayoutId="@layout/state_loading">
-
-    </cn.droidlover.xdroidmvp.widget.StateController>
+        android:id="@+id/fl_content"></FrameLayout>
 
 </LinearLayout>
